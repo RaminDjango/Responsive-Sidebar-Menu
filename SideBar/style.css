@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color:#707070;
+    --primary-color: #695CFE;
+    --primary-color-light:#F6F5FF;
+    --toggle-color:#DDD ;
+    --sideBar-color:#fff;
+}
+
+
+body {
+    height: 100vh;
+    background-color: var(--body-color);
+    transition: 0.4s;
+
+}
+
+body.dark {
+    --body-color:#18191A;
+    --text-color: #CCC;
+    --primary-color: #3A3B3C;
+    --primary-color-light:#3A3B3C;
+    --toggle-color:#fff ;
+    --sideBar-color:#242526;
+}
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 370px;
+    padding: 10px;
+    height: 100%;
+    background:var(--sideBar-color);
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.57) ;
+    transition: 0.4s
+}
+
+
+
+.side-bar .logo-text {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    margin-top: 10px;
+    
+
+}
+
+.logo-text h1 {
+    background-color: rgb(112, 49, 238);
+    padding: 10px;
+    width: 70px;
+    margin: 10px;
+    text-align: center;
+margin-left: -10px;
+    
+    border-radius: 6px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.name-platform {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+}
+
+.name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 23px;
+    color: var(--text-color);
+}
+.profesion {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 23px;
+    color: var(--text-color);
+}
+.side-bar .text {
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+
+.side-bar  header .toggle {
+    position: absolute;
+    right: -23px;
+    top: 4%;
+    background:var( --primary-color);
+    height: 25px;
+    padding: 16px;
+    transform: translateY(-50%) rotate(180deg);
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    border-radius: 50%;
+
+}
+
+.side-bar li {
+    list-style: none;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.side-bar li .icon {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+}
+
+.side-bar li .text, 
+.side-bar li .icon {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--text-color);
+}
+
+.side-bar li a {
+    text-decoration: none;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    transition: 0.4s;
+    border-radius: 6px;
+}
+
+.side-bar .search-box{
+    
+    background:var(--primary-color-light);
+    
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+  
+    outline: none;
+    border: none;
+    color:var(--text-color);
+    border-radius: 6px;
+    background:var(--primary-color-light);
+}
+
+.side-bar li a:hover{
+    background: var(--primary-color);
+}
+
+.side-bar li a:hover .icon,
+.side-bar li a:hover .text{
+    color: white;
+}
+
+.side-bar .menu-bar {
+    
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.menu-bar .mode {
+    position: relative;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+}
+
+
+.menu-bar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i {
+    position: absolute;
+}
+
+
+.menu-bar .mode i.sun{
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    border-radius: 25px;
+    width: 44px;
+    background:var(--toggle-color);
+}
+
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius:50% ;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sideBar-color);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+body.dark .switch::before{
+    left: 20px;
+}
+
+
+.side-bar.close .text {
+    opacity: 0;
+}
+
+
+
+.side-bar.close header .toggle{
+    transform: translateY(-50%);
+   
+}
+
+.side-bar.close{
+    width: 88px;
+   
+}
